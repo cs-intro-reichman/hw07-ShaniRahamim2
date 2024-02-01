@@ -15,7 +15,7 @@ public class HashTagTokenizer {
 		In in = new In(fileName);
 
 		// Your code here
-		for(int i = 0; i <= 3000; i++){
+		for(int i = 0; i < dictionary.length; i++){
 			dictionary[i] = in.readString(); 
 		}
 
@@ -24,7 +24,7 @@ public class HashTagTokenizer {
 
 	public static boolean existInDictionary(String word, String []dictionary) {
 		// Your code here
-		for(int i = 0; i <= 3000; i++){
+		for(int i = 0; i < dictionary.length ; i++){
 			if (dictionary[i].equals(word)) {
 				return true; 
 			}
