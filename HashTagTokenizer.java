@@ -25,23 +25,29 @@ public class HashTagTokenizer {
 	public static boolean existInDictionary(String word, String []dictionary) {
 		// Your code here
 		for(int i = 0; i <= 3000; i++){
-			if (dictionary[i] == word) 
+			if (dictionary[i].equals(word)) {
 				return true; 
+			}
 		}
 		return false; 
 	}
 
 	public static void breakHashTag(String hashtag, String[] dictionary) {
-
 		// Base case: do nothing (return) if hashtag is an empty string.
         if (hashtag.isEmpty()) {
             return;
         }
- 
+
+		hashtag = hashtag.toLowerCase();  // convert the hashtag to lowercase 
+
         int N = hashtag.length();
 
         for (int i = 1; i <= N; i++) {
-		
+			String word = hashtag.substring(0,i); 
+			if ( existInDictionary(word, dictionary) == true) {
+				System.out.println(word);
+				breakHashTag(hashtag.substring(i, N), dictionary); 
+			}
         }
     }
 
