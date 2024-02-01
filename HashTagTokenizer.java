@@ -15,12 +15,20 @@ public class HashTagTokenizer {
 		In in = new In(fileName);
 
 		// Your code here
+		for(int i = 0; i <= 3000; i++){
+			dictionary[i] = in.readString(); 
+		}
 
 		return dictionary;
 	}
 
 	public static boolean existInDictionary(String word, String []dictionary) {
 		// Your code here
+		for(int i = 0; i <= 3000; i++){
+			if (dictionary[i] == word) 
+				return true; 
+		}
+		return false; 
 	}
 
 	public static void breakHashTag(String hashtag, String[] dictionary) {
