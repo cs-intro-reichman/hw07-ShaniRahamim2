@@ -70,7 +70,7 @@ public class SpellChecker {
 			int distance = levenshtein(word, dictionary[i]); 
 			if (distance < minDistance) {
 				minDistance = distance; 
-				similarString = word; 
+				similarString = dictionary[i]; 
 			}
 		}
 		if (minDistance <= threshold) {
